@@ -2,6 +2,7 @@
 package carsystem;
 import java.util.ArrayList;
 import java.util.Scanner;
+// import  funcionario.FuncionarioControler.FuncionarioControler;
 
 
 public class CarSystem {
@@ -31,6 +32,7 @@ public class CarSystem {
                     break;
                 case 2:
                    opFuncionarios();
+               
                     break;
                 case 3:
                     opMateriais();
@@ -71,6 +73,10 @@ public class CarSystem {
         System.out.println("Escolha uma opcao: ");
 
         opcao = scanner.nextInt();
+
+   
+
+        
     }
 
 
