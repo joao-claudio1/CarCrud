@@ -5,6 +5,8 @@ import java.util.Scanner;
 import carsystem.carroController.CarroController;
 import static carsystem.carroController.CarroController.registrarCarro;
 import static carsystem.carroController.CarroController.listarCarros;
+import static carsystem.carroController.CarroController.apagarCarro;
+import static carsystem.carroController.CarroController.editarCarro;
 
 public class CarSystem {
     private static ArrayList<Carro> carros = new ArrayList<>();
@@ -64,6 +66,12 @@ public class CarSystem {
         }
         else if(opCarro == 2){
           listarCarros();
+        }else if(opCarro == 3){
+          apagarCarro();
+        }else if(opCarro == 4){
+          editarCarro();
+        }else{
+        System.out.println("Opcão incorreto, tem que ser[0-4]");
         }
         
 
