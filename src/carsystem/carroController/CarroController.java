@@ -38,6 +38,49 @@ public class CarroController {
             }
         }
     }
+    
+      public static void apagarCarro() {
+        listarCarros();
+        if (!carros.isEmpty()) {
+            System.out.print("Digite o índice do carro a ser apagado: ");
+            int indice = scanner.nextInt();
+            if (indice >= 0 && indice < carros.size()) {
+                carros.remove(indice);
+                System.out.println("Carro apagado com sucesso!");
+            } else {
+                System.out.println("Índice inválido.");
+            }
+        }
+    }
+
+    public static void editarCarro() {
+       
+        if (!carros.isEmpty()) {
+            System.out.print("Digite o índice do carro a ser editado: ");
+            int indice = scanner.nextInt();
+            scanner.nextLine(); 
+            if (indice >= 0 && indice < carros.size()) {
+                Carro carro = carros.get(indice);
+
+                System.out.print("Digite o novo modelo do carro (" + carro.modelo + "): ");
+                String novoModelo = scanner.nextLine();
+                carro.modelo = novoModelo.isEmpty() ? carro.modelo : novoModelo;
+
+                System.out.print("Digite a nova marca do carro (" + carro.marca + "): ");
+                String novaMarca = scanner.nextLine();
+                carro.marca = novaMarca.isEmpty() ? carro.marca : novaMarca;
+
+                System.out.print("Digite o novo ano do carro (" + carro.ano + "): ");
+                String novoAnoStr = scanner.nextLine();
+                int novoAno = novoAnoStr.isEmpty() ? carro.ano : Integer.parseInt(novoAnoStr);
+                carro.ano = novoAno;
+
+                System.out.println("Carro editado com sucesso!");
+            } else {
+                System.out.println("Índice inválido.");
+            }
+        }
+    }
 
 
 }

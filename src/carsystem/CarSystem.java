@@ -2,11 +2,14 @@
 package carsystem;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import carsystem.carroController.CarroController;
 import static carsystem.carroController.CarroController.registrarCarro;
 import static carsystem.carroController.CarroController.listarCarros;
+
 import static carsystem.carroController.CarroController.apagarCarro;
 import static carsystem.carroController.CarroController.editarCarro;
+
 
 public class CarSystem {
     private static ArrayList<Carro> carros = new ArrayList<>();
@@ -34,7 +37,8 @@ public class CarSystem {
                     opCarro();
                     break;
                 case 2:
-                  // opFuncionarios();
+                   opFuncionarios();
+               
                     break;
                 case 3:
                    // opMateriais();
@@ -61,17 +65,22 @@ public class CarSystem {
 
         opCarro = scanner.nextInt();
         
-        if(opCarro == 1){
-          registrarCarro();
-        }
-        else if(opCarro == 2){
-          listarCarros();
-        }else if(opCarro == 3){
-          apagarCarro();
-        }else if(opCarro == 4){
-          editarCarro();
-        }else{
-        System.out.println("Opcão incorreto, tem que ser[0-4]");
+        switch (opCarro) {
+            case 1:
+                registrarCarro();
+                break;
+            case 2:
+                listarCarros();
+                break;
+            case 3:
+                apagarCarro();
+                break;
+            case 4:
+                editarCarro();
+                break;
+            default:
+                System.out.println("Opcão incorreto, tem que ser[0-4]");
+                break;
         }
         
 
@@ -89,6 +98,10 @@ public class CarSystem {
         System.out.println("Escolha uma opcao: ");
 
         opcao = scanner.nextInt();
+
+   
+
+        
     }
 
 
